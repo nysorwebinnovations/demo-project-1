@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Nexus Palette: Primary #1B4769, Mid #629BB5, Accent #89D8E1 */
+    --background: 200 40% 98%;
+    --foreground: 206 59% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 206 59% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 206 59% 20%;
+    --primary: 206 59% 26%; /* #1B4769 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 199 45% 93%;
+    --secondary-foreground: 206 59% 20%;
+    --muted: 199 30% 94%;
+    --muted-foreground: 204 30% 42%;
+    --accent: 186 61% 71%; /* #89D8E1 */
+    --accent-foreground: 206 59% 18%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 199 32% 86%;
+    --input: 199 32% 86%;
+    --ring: 186 61% 71%;
+    --radius: 0.85rem;
+  }
+
+  .dark {
+    --background: 208 52% 8%; /* #0A1622 */
+    --foreground: 190 40% 96%;
+    --card: 207 45% 12%;
+    --card-foreground: 190 40% 96%;
+    --popover: 207 45% 12%;
+    --popover-foreground: 190 40% 96%;
+    --primary: 186 61% 71%; /* #89D8E1 for high contrast dark buttons */
+    --primary-foreground: 206 59% 15%;
+    --secondary: 206 40% 17%;
+    --secondary-foreground: 190 40% 96%;
+    --muted: 206 40% 16%;
+    --muted-foreground: 199 25% 65%;
+    --accent: 199 36% 55%; /* #629BB5 */
+    --accent-foreground: 190 40% 98%;
+    --destructive: 0 63% 35%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 206 35% 20%;
+    --input: 206 35% 20%;
+    --ring: 186 61% 71%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-[#89D8E1]/30 selection:text-[#1B4769] dark:selection:text-[#89D8E1];
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    overflow-x: hidden;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-[#0E2334]/70 backdrop-blur-xl border border-white/50 dark:border-[#629BB5]/20 shadow-sm;
+  }
+
+  .glass-card {
+    @apply bg-white/80 dark:bg-[#0D2131]/80 backdrop-blur-xl border border-[#629BB5]/25 dark:border-[#629BB5]/20 shadow-lg shadow-[#1B4769]/5 dark:shadow-black/20;
+  }
+
+  .glass-pill {
+    @apply bg-[#EBF7F9]/80 dark:bg-[#153249]/80 backdrop-blur-md border border-[#89D8E1]/40 text-[#1B4769] dark:text-[#89D8E1];
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#1B4769] via-[#2A658E] to-[#629BB5] dark:from-[#89D8E1] dark:via-[#A2E6EE] dark:to-[#629BB5];
+  }
+
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#1B4769] via-[#629BB5] to-[#89D8E1] dark:from-[#89D8E1] dark:via-[#629BB5] dark:to-white;
+  }
+
+  .bg-feather-mesh {
+    background-image: 
+      radial-gradient(at 15% 15%, rgba(137, 216, 225, 0.18) 0px, transparent 50%),
+      radial-gradient(at 85% 20%, rgba(98, 155, 181, 0.15) 0px, transparent 50%),
+      radial-gradient(at 50% 60%, rgba(27, 71, 105, 0.08) 0px, transparent 60%),
+      radial-gradient(at 80% 85%, rgba(137, 216, 225, 0.2) 0px, transparent 50%),
+      radial-gradient(at 20% 90%, rgba(98, 155, 181, 0.15) 0px, transparent 50%);
+  }
+
+  .bg-grid-nexus {
+    background-image:
+      linear-gradient(to right, rgba(98, 155, 181, 0.12) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(98, 155, 181, 0.12) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-dots-nexus {
+    background-image: radial-gradient(rgba(98, 155, 181, 0.22) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .btn-primary-nexus {
+    @apply bg-[#1B4769] hover:bg-[#153853] text-white shadow-lg shadow-[#1B4769]/25 hover:shadow-xl hover:shadow-[#1B4769]/35 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200;
+  }
+
+  .btn-secondary-nexus {
+    @apply border-2 border-[#629BB5] text-[#1B4769] dark:text-[#89D8E1] hover:bg-[#629BB5]/10 hover:border-[#1B4769] dark:hover:border-[#89D8E1] transition-all duration-200;
+  }
+
+  .btn-accent-nexus {
+    @apply bg-[#89D8E1] hover:bg-[#72ccd6] text-[#0E283C] font-semibold shadow-lg shadow-[#89D8E1]/30 hover:shadow-xl hover:shadow-[#89D8E1]/40 transition-all duration-200;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: #629BB5;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1B4769;
+}
