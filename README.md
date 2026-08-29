@@ -2,7 +2,7 @@
 
 A responsive, conversion-focused Landing Page Template built with Next.js, React, TypeScript, and Tailwind CSS.
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Site-22c55e?style=for-the-badge)](https://your-demo-link.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Site-22c55e?style=for-the-badge)](https://demo-project-1-nysor.vercel.app/)
 
 ---
 
